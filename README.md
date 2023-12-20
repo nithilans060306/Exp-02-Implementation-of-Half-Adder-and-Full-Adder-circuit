@@ -1,13 +1,19 @@
-# Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit
+## Name: Nithilan S
 
-# Implementation-of-Half-Adder-and-Full-Adder-circuit
-### AIM:
+## RegisterNumber: 23013463
+
+# Exp-03 Implementation of Half Adder and Full Adder circuit
+
+# Implementation of Half Adder and Full Adder circuit
+## Aim:
 To design a half adder and full adder circuit and verify its truth table in Quartus using Verilog programming.
 
-### Equipments Required:
+## Equipments Required:
+```
 Hardware – PCs, Cyclone II , USB flasher
 Software – Quartus prime
-Theory
+```
+### Theory:
 Adders are digital circuits that carry out addition of numbers.
 
 ### Half Adder
@@ -29,26 +35,44 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 
 #### Figure -02 FULL ADDER 
 
-### Procedure
-
+## Procedure
 Connect the supply (+5V) to the circuit
 Switch ON the main switch
 If the output is 1, then the led glows.
-### 
-Program:
-/*
-Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-Logic symbol & Truthtable
-RTL realization
-
-### Output:
-### RTL
-### TIMING DIAGRAM
-
-
-### TRUTH TABLE 
-
+## Program:
+### Half Adder:
+```
+module halfadder (A, B, sum, carry);
+input A, B;
+output sum, carry;
+xor (sum, A, B);
+and (carry,A,B);
+endmodule
+```
+### Full Adder:
+```
+module fulladder(A,B,C,sum,carry);
+input A,B,C;
+output sum,carry;
+assign sum = ((A^B)^C)
+assign carry = ((A&b)|(A&C)|(B&C));
+endmodule
+```
+##  RTL realization:
+### Half Adder:
+![DE Experiment 3(ha) RTL output](https://github.com/nithilans060306/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/147473026/6befc26f-5773-4a10-bfff-5c93e3ccb26d)
+### Full Adder:
+![DE Experiment 3(fa) RTL output](https://github.com/nithilans060306/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/147473026/1713a4b2-d8e7-4f0f-b827-a0cbf7da26a3)
+## Truthtable:
+### Half Adder:
+![DE Experiment 3(ha) Truth table](https://github.com/nithilans060306/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/147473026/27844912-a622-4580-8f6d-d8b0ff12da61)
+### Full Adder:
+![DE Experiment 3(fa) Truth table](https://github.com/nithilans060306/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/147473026/d086b31b-8129-48cb-a1c5-7faaa221ac07)
+## Timing diagram:
+### Half Adder:
+![DE Experiment 3(ha) Waveform output](https://github.com/nithilans060306/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/147473026/44638947-4f52-42e5-b737-bb081a01dd5a)
+### Full Adder:
+![DE Experiment 3(fa) Waveform output](https://github.com/nithilans060306/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/147473026/9e82d07a-a613-461c-9045-7c81c0e3ac15)
 ### Result:
+Thus a Half Adder and Full Adder is designed and its truthtables are verified in Quartus using
+Verilog programming.
